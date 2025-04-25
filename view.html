@@ -7,7 +7,7 @@
 </head>
 <body>
   <div class="bi-container">
-    <iframe id="bi-frame" width="100%" height="600" frameborder="0"></iframe>
+    <iframe id="bi-frame" width="100%" height="600" frameborder="0" allowFullScreen="true"></iframe>
 
     <aside class="sidebar">
       <input type="text" placeholder="Pesquisar..." />
@@ -22,13 +22,19 @@
   <script>
     const params = new URLSearchParams(window.location.search);
     const reportId = params.get("id");
+
     const reportURLs = {
-      powerbi1: "https://app.powerbi.com/view?r=XXXX1",
+      powerbi1: "https://app.powerbi.com/reportEmbed?reportId=c1fedd14-9aa0-4b14-96fd-bf2ae200a6eb&autoAuth=true&ctid=94541d2e-b89d-445d-b42f-a6d6e88e068f",
       powerbi2: "https://app.powerbi.com/view?r=XXXX2",
       powerbi3: "https://app.powerbi.com/view?r=XXXX3"
     };
 
-    document.getElementById("bi-frame").src = reportURLs[reportId];
+    if (reportURLs[reportId]) {
+      document.getElementById("bi-frame").src = reportURLs[reportId];
+    } else {
+      document.getElementById("bi-frame").src = "";
+      alert("Relatório não encontrado.");
+    }
   </script>
 </body>
 </html>

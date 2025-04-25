@@ -8,10 +8,12 @@
 <body>
   <div class="login-container">
     <h2>Login</h2>
-    <input type="text" id="username" placeholder="Usuário" />
-    <input type="password" id="password" placeholder="Senha" />
-    <button onclick="login()">Entrar</button>
-    <p id="error-message" class="error"></p>
+    <form onsubmit="login(); return false;">
+      <input type="text" id="username" placeholder="Usuário" required />
+      <input type="password" id="password" placeholder="Senha" required />
+      <button type="submit">Entrar</button>
+      <p id="error-message" class="error"></p>
+    </form>
   </div>
 
   <script src="script.js"></script>

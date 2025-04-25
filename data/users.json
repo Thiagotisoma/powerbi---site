@@ -1,0 +1,12 @@
+[
+  {
+    "username": "usuario1",
+    "password": "senha1",
+    "reports": ["powerbi1", "powerbi2"]
+  },
+  {
+    "username": "usuario2",
+    "password": "senha2",
+    "reports": ["powerbi3"]
+  }
+]

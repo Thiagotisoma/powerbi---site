@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Visualizador Power BI</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="bi-container">
+    <iframe id="bi-frame" width="100%" height="600" frameborder="0"></iframe>
+
+    <aside class="sidebar">
+      <input type="text" placeholder="Pesquisar..." />
+      <h3>Downloads</h3>
+      <ul>
+        <li><a href="assets/arquivos/arquivo1.pdf" download>Arquivo 1</a></li>
+        <li><a href="assets/arquivos/arquivo2.xlsx" download>Arquivo 2</a></li>
+      </ul>
+    </aside>
+  </div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const reportId = params.get("id");
+    const reportURLs = {
+      powerbi1: "https://app.powerbi.com/view?r=XXXX1",
+      powerbi2: "https://app.powerbi.com/view?r=XXXX2",
+      powerbi3: "https://app.powerbi.com/view?r=XXXX3"
+    };
+
+    document.getElementById("bi-frame").src = reportURLs[reportId];
+  </script>
+</body>
+</html>
